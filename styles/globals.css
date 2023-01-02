@@ -2,6 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
+:target {
+	scroll-margin-top: 1rem;
+}
+
 body {
 	@apply bg-gradient-to-r from-zinc-900 via-zinc-800 to-zinc-900 h-[100vh] w-full text-zinc-100 font-light text-base;
+
+	scrollbar-width: thin;
+	scrollbar-color: theme(colors.zinc.700) theme(colors.zinc.800);
+}
+
+body::-webkit-scrollbar {
+	@apply w-2;
+}
+
+body::-webkit-scrollbar-track {
+	@apply bg-zinc-800;
+}
+body::-webkit-scrollbar-thumb {
+	@apply bg-zinc-700 rounded-lg;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+	display: none;
 }
