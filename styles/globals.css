@@ -33,3 +33,11 @@ body::-webkit-scrollbar-thumb {
 .hide-scrollbar::-webkit-scrollbar {
 	display: none;
 }
+
+.cards-grid {
+	display: grid;
+	width: 100%;
+	gap: 1rem;
+
+	grid-template-columns: repeat(auto-fit, minmax(382px, 1fr));
+}

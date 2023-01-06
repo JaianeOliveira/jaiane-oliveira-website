@@ -2,7 +2,7 @@ import Button from '../Button';
 
 const Card = () => {
 	return (
-		<div className="h-[482px] min-w-[334px] bg-zinc-800 shadow-md rounded-2xl p-4 flex flex-col gap-4 hover:scale-105 focus-visible:scale-105 transition-all outline-none">
+		<div className="h-[482px]  bg-zinc-800 shadow-md rounded-2xl p-4 flex flex-col gap-4 hover:scale-105 focus-visible:scale-105 transition-all outline-none">
 			<div className="bg-zinc-700 w-full h-36 rounded-lg flex items-center justify-center">
 				Image
 			</div>

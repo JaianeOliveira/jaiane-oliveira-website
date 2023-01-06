@@ -1,7 +1,15 @@
 import Link from 'next/link';
+import {
+	DiscordLogo,
+	Envelope,
+	GithubLogo,
+	LinkedinLogo,
+	TelegramLogo,
+} from 'phosphor-react';
 import { w } from 'windstitch';
+import BackToTopButton from '../components/BackToTopButton';
 import Button from '../components/Button';
-import Carousel from '../components/Carousel';
+import Card from '../components/Carousel/Card';
 import Header from '../components/Header';
 
 const Avatar = w.img(
@@ -20,7 +28,7 @@ const Home = () => {
 			<Header />
 			<Section className="items-center" id="home">
 				<Avatar src="https://www.github.com/jaianeoliveira.png" />
-				<h1 className="text-xl font-medium">
+				<h1 className="text-xl font-medium text-center">
 					Desenvolvedora de software fullstack
 				</h1>
 				<p className="text-center max-w-[60vw]">
@@ -32,7 +40,7 @@ const Home = () => {
 					Instituto Federal de Alagoas - IFAL.
 				</p>
 
-				<div className="flex gap-8 my-12">
+				<div className="flex gap-8 my-12 overflow-x-auto hide-scrollbar	">
 					<LogoItem src="/express.svg" alt="Express" />
 					<LogoItem src="/nest.svg" alt="NestJS" />
 					<LogoItem src="/nodejs.svg" alt="NodeJS" />
@@ -42,66 +50,49 @@ const Home = () => {
 					<LogoItem src="/typescript.svg" alt="Typescript" />
 				</div>
 			</Section>
-
 			<Section id="projects">
 				<SectionTitle>Projetos em destaque</SectionTitle>
-				<Carousel />
-			</Section>
-
-			{/* <Section id="stack">
-				<SectionTitle>Stack</SectionTitle>
-				<div className="flex gap-4 flex-wrap">
-					<TechItem title="ReactJS"></TechItem>
-					<TechItem title="NextJS"></TechItem>
-					<TechItem title="Javascript"></TechItem>
-					<TechItem title="Typescript"></TechItem>
-					<TechItem title="React Native"></TechItem>
-					<TechItem title="NodeJS"></TechItem>
-					<TechItem title="ExpressJS"></TechItem>
-					<TechItem title="NestJS"></TechItem>
-					<TechItem title="Styled-Components"></TechItem>
-					<TechItem title="Tailwind CSS"></TechItem>
-					<TechItem title="Sass"></TechItem>
+				<div className="cards-grid">
+					<Card />
+					<Card />
+					<Card />
+					<Card />
 				</div>
-			</Section> */}
+			</Section>
 
 			<Section id="contact">
-				<SectionTitle>Contato</SectionTitle>
+				<h2 className="text-xl uppercase font-light self-center mb-4 text-center">
+					Precisa de um DEV ? Entre em contato
+				</h2>
+				<div className="flex gap-4 self-center flex-wrap items-center justify-center w-full">
+					<Button variant="gray" className="md:w-fit w-full">
+						<LinkedinLogo weight="fill" /> Linkedin
+					</Button>
 
-				<div className="flex gap-8">
-					<div>
-						<Button>Github</Button>
-						<Button>Linkedlin</Button>
-					</div>
-					<form>
-						<fieldset>
-							<legend>Nome</legend>
-							<input type="text" title="name" />
-						</fieldset>
-						<fieldset>
-							<legend>E-mail</legend>
-							<input type="text" title="email" />
-						</fieldset>
-						<fieldset>
-							<legend>Telefone</legend>
-							<input type="text" title="phone" />
-						</fieldset>
+					<Button variant="gray" className="md:w-fit w-full">
+						<GithubLogo weight="fill" /> Github
+					</Button>
 
-						<fieldset>
-							<legend>Telefone</legend>
-							<textarea title="description" />
-						</fieldset>
-					</form>
+					<Button variant="gray" className="md:w-fit w-full">
+						<Envelope weight="fill" /> E-mail
+					</Button>
+
+					<Button variant="gray" className="md:w-fit w-full">
+						<TelegramLogo weight="fill" /> Telegram
+					</Button>
+
+					<Button variant="gray" className="md:w-fit w-full">
+						<DiscordLogo weight="fill" /> Discord
+					</Button>
 				</div>
 			</Section>
-
-			<footer className="px-[8vw] py-4 flex items-center justify-center text-zinc-100 text-opacity-50 font-thin border-t border-zinc-800">
-				&copy;
+			<footer className="px-[8vw] py-4 flex items-center justify-center gap-1 text-zinc-100 text-opacity-50 font-thin border-t border-zinc-800">
+				<span>copyright &copy; 2023 </span>
 				<Link target={'_blank'} href="https://www.github.com/jaianeoliveira">
 					Jaiane Oliveira
 				</Link>
-				, 2022
 			</footer>
+			<BackToTopButton />
 		</div>
 	);
 };
